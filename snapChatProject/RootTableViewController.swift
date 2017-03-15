@@ -43,20 +43,16 @@ class RootTableViewController: UITableViewController {
         return threadNames[section]
     }
     
-    @IBAction func unwindToRoot(segue: UIStoryboardSegue) {
-        
-    }
 
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseRootCell", for: indexPath) as! RootTableViewCell
+        cell.sender.text = 
+        
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.

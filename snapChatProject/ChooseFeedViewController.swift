@@ -11,10 +11,15 @@ import UIKit
 class ChooseFeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var FeedView: UITableView!
+    @IBOutlet weak var feedName: UILabel!
+    @IBOutlet weak var chooseFeedTableView: UITableView!
+    
+    var currentImage: UIImage!
+    var currentCategory: Int!
     
     @IBAction func postButton(_ sender: UIButton) {
+        threads[threadNames[currentCategory]]!.append(currentImage!)
         performSegue(withIdentifier: "chooseFeedToRoot", sender: Any?.self)
-        threads[threadNames[currentCategory]]?.append(currentImage!)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -27,12 +32,6 @@ class ChooseFeedViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
 
-    
-    @IBOutlet weak var feedName: UILabel!
-    @IBOutlet weak var chooseFeedTableView: UITableView!
-    
-    var currentImage: UIImage!
-    var currentCategory: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()

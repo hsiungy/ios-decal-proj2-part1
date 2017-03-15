@@ -41,6 +41,10 @@ class ImagePickerController: UIViewController, UICollectionViewDataSource, UICol
         }
     }
     
+    @IBAction func unwindToRoot(segue: UIStoryboardSegue) {
+        
+    }
+    
     //DON'T MODIFY CODE HERE AND BELOW!
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return allImages.count

@@ -139,11 +139,18 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="unread" translatesAutoresizingMaskIntoConstraints="NO" id="3gg-oK-S9h">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unread" translatesAutoresizingMaskIntoConstraints="NO" id="3gg-oK-S9h">
                                             <rect key="frame" x="24" y="8" width="30" height="27"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="0iO-pN-vHc"/>
+                                                <constraint firstAttribute="height" constant="27" id="nHw-97-kG9"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3gg-oK-S9h" firstAttribute="leading" secondItem="x2U-GG-diy" secondAttribute="leadingMargin" constant="16" id="Wzi-PF-sQs"/>
+                                        <constraint firstAttribute="topMargin" secondItem="3gg-oK-S9h" secondAttribute="top" id="wdb-nG-82W"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="isRead" destination="3gg-oK-S9h" id="fZ0-6S-Sge"/>
