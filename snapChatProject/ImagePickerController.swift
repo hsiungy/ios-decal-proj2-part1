@@ -9,6 +9,7 @@
 import UIKit
 
 class ImagePickerController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    var selectedImage: UIImage!
     
     @IBOutlet var imageCollectionView: UICollectionView!
     override func viewDidLoad() {
@@ -24,9 +25,21 @@ class ImagePickerController: UIViewController, UICollectionViewDataSource, UICol
 
     func selectImage(_ image: UIImage) {
         //The image being selected is passed in as "image".
+        selectedImage = image
+        performSegue(withIdentifier: "snapchatToChooseFeed", sender: Any?.self)
+        
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "snapchatToChooseFeed" {
+                if let dest = segue.destination as? ChooseFeedViewController {
+                    dest.currentImage = selectedImage
+                }
+            }
+        }
+    }
     
     //DON'T MODIFY CODE HERE AND BELOW!
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
